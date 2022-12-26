@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package doctor;
+
+service DoctorService {
+  rpc FindOne (DoctorById) returns (Doctor);
+  rpc FindMany (stream DoctorById) returns (stream Doctor);
+}
+
+message DoctorById {
+  int32 id = 1;
+}
+
+message Doctor {
+  int32 id = 1;
+  string name = 2;
+}

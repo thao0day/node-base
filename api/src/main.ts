@@ -5,6 +5,4 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   await app.listen(3000);
 }
-bootstrap().then(r => {
-  console.log(r)
-});
+bootstrap();
