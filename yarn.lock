@@ -1426,7 +1426,7 @@
     "tslib" "2.4.1"
     "uuid" "9.0.0"
 
-"@nestjs/microservices@^9.0.0":
+"@nestjs/microservices@^9.0.0", "@nestjs/microservices@^9.2.1":
   "integrity" "sha512-ve4dqgoIaUG9VtinHHGCvf6SvtPjd3I44Mj8z8mSkcB8BEPfJnf4FNOShFBgsedtxLaiZyjpv8NCLcNVv5KKGg=="
   "resolved" "https://registry.npmjs.org/@nestjs/microservices/-/microservices-9.2.1.tgz"
   "version" "9.2.1"
@@ -2500,6 +2500,7 @@
   dependencies:
     "@nestjs/common" "^9.0.0"
     "@nestjs/core" "^9.0.0"
+    "@nestjs/microservices" "^9.2.1"
     "@nestjs/platform-express" "^9.0.0"
     "proto" "*"
     "reflect-metadata" "^0.1.13"
