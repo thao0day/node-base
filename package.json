@@ -10,18 +10,31 @@
     "proto:user-svc": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=node_modules/proto --ts_proto_out=services/user-svc/src node_modules/proto/user.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
     "proto:api-doctor": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=node_modules/proto --ts_proto_out=api/src/doctor node_modules/proto/doctor.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
     "proto:doctor-svc": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=node_modules/proto --ts_proto_out=services/doctor-svc/src node_modules/proto/doctor.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
-    "proto:all": "npm run proto:api-user && npm run proto:api-doctor && npm run proto:user-svc && npm run proto:doctor-svc"
+    "proto:all": "npm run proto:api-user && npm run proto:api-doctor && npm run proto:user-svc && npm run proto:doctor-svc",
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "dev": "turbo run dev",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo run lint",
+    "test": "turbo run test"
   },
   "dependencies": {
+    "@nestjs/config": "^2.3.1"
   },
   "devDependencies": {
-    "lerna": "^6.1.0",
+    "eslint-config-custom": "*",
+    "prettier": "latest",
     "protoc-gen-ts": "^0.8.5",
-    "ts-proto": "^1.136.1"
+    "ts-proto": "^1.136.1",
+    "turbo": "latest"
   },
   "workspaces": [
     "services/*",
     "proto",
     "api"
-  ]
+  ],
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=7.0.0"
+  }
 }
