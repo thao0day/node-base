@@ -6,20 +6,23 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "proto:api-user": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=node_modules/proto --ts_proto_out=api/src/user node_modules/proto/user.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
-    "proto:user-svc": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=node_modules/proto --ts_proto_out=services/user-svc/src node_modules/proto/user.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
-    "proto:api-doctor": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=node_modules/proto --ts_proto_out=api/src/doctor node_modules/proto/doctor.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
-    "proto:doctor-svc": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=node_modules/proto --ts_proto_out=services/doctor-svc/src node_modules/proto/doctor.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
-    "proto:all": "npm run proto:api-user && npm run proto:api-doctor && npm run proto:user-svc && npm run proto:doctor-svc",
+    "proto:gen-user": "turbo proto:gen-user",
+    "proto:doctor": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=node_modules/proto --ts_proto_out=services/doctor-svc/src node_modules/proto/doctor.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb && protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=node_modules/proto --ts_proto_out=api/src/doctor node_modules/proto/doctor.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
     "build": "turbo run build",
+    "build-graph": "turbo run build --graph",
     "clean": "turbo run clean",
     "dev": "turbo run dev",
+    "start:prod": "turbo run start:prod",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
     "test": "turbo run test"
   },
   "dependencies": {
-    "@nestjs/config": "^2.3.1"
+    "@grpc/grpc-js": "^1.8.13",
+    "@nestjs/config": "^2.3.1",
+    "@types/js-yaml": "^4.0.5",
+    "class-validator": "^0.14.0",
+    "js-yaml": "^4.1.0"
   },
   "devDependencies": {
     "eslint-config-custom": "*",

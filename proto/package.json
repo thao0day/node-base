@@ -1,5 +1,5 @@
 {
-  "name": "proto",
+  "name": "nodekit-proto",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sudodt/node-kit.git"
+    "url": "git+https://github.com/dangtvn/node-kit.git"
   },
   "keywords": [
     "proto"
@@ -17,7 +17,7 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sudodt/node-kit/issues"
+    "url": "https://github.com/dangtvn/node-kit/issues"
   },
-  "homepage": "https://github.com/sudodt/node-kit#readme"
+  "homepage": "https://github.com/dangtvn/node-kit#readme"
 }

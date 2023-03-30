@@ -20,6 +20,13 @@
       },
       "clean": {
         "cache": false
+      },
+      "start:prod": {
+        "cache": true,
+        "persistent": true
+      },
+      "proto:gen-user": {
+        "cache": true
       }
     }
   }

@@ -2,6 +2,7 @@
 - Nestjs
 - Protobuf
 - Mono-repo 
+- Model generation
 ## Code generation
 ```
 npm run proto:all
