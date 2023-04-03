@@ -21,6 +21,7 @@
     "@grpc/grpc-js": "^1.8.13",
     "@nestjs/config": "^2.3.1",
     "@types/js-yaml": "^4.0.5",
+    "class-transformer": "^0.5.1",
     "class-validator": "^0.14.0",
     "js-yaml": "^4.1.0"
   },
@@ -31,11 +32,6 @@
     "ts-proto": "^1.136.1",
     "turbo": "latest"
   },
-  "workspaces": [
-    "services/*",
-    "proto",
-    "api"
-  ],
   "engines": {
     "node": ">=14.0.0",
     "npm": ">=7.0.0"
