@@ -4,7 +4,7 @@ import { Transport } from '@nestjs/microservices';
 import { join } from 'path';
 import { AppModule } from './app.module';
 import configuration from '../config/configuation';
-import { protobufPackage } from './user.pb';
+import { protobufPackage } from './user/user.pb';
 
 const config = configuration();
 
