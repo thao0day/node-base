@@ -3,8 +3,8 @@ import { NestFactory } from '@nestjs/core';
 import { Transport } from '@nestjs/microservices';
 import { join } from 'path';
 import { AppModule } from './app.module';
-import configuration from '../config/configuation';
 import { protobufPackage } from './user/user.pb';
+import configuration from '../config/configuation';
 
 const config = configuration();
 
@@ -18,7 +18,7 @@ async function bootstrap() {
         package: protobufPackage,
         protoPath: join(
           __dirname,
-          '../../../node_modules/core-proto/user.proto',
+          '../../../../node_modules/core-proto/user.proto',
         ),
       },
     },
@@ -28,4 +28,5 @@ async function bootstrap() {
 
   await app.listen();
 }
+
 bootstrap();
