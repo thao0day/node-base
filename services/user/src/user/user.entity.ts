@@ -1,6 +1,6 @@
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity()
+@Entity('users')
 export class User extends BaseEntity {
   @PrimaryGeneratedColumn()
   public id!: number;
@@ -9,11 +9,5 @@ export class User extends BaseEntity {
   public name!: string;
 
   @Column({ type: 'varchar' })
-  public sku!: string;
-
-  @Column({ type: 'integer' })
-  public stock!: number;
-
-  @Column({ type: 'decimal', precision: 12, scale: 2 })
-  public price!: number;
+  public email!: string;
 }

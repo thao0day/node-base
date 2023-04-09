@@ -4,7 +4,6 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
 import { USER_PACKAGE_NAME, USER_SERVICE_NAME } from './user.pb';
 import { join } from 'path';
 import configuration from '../../config/configuation';
-
 const config = configuration();
 
 @Module({
