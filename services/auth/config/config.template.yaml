@@ -1,0 +1,12 @@
+grpc:
+  host: 0.0.0.0
+  port: 50053
+db:
+  type: 'postgres'
+  host: ''
+  port: 5432
+  database: ''
+  username: ''
+  password: ''
+  ssl: true
+  synchronize: true

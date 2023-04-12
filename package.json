@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "proto:gen-user": "turbo proto:gen-user",
-    "proto:doctor": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=node_modules/proto --ts_proto_out=services/doctor-svc/src node_modules/proto/doctor.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb && protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=node_modules/proto --ts_proto_out=api/src/doctor node_modules/proto/doctor.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
+    "proto:gen-auth": "turbo proto:gen-auth",
     "build": "turbo run build",
     "build-graph": "turbo run build --graph",
     "clean": "turbo run clean",

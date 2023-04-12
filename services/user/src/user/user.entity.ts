@@ -10,4 +10,7 @@ export class User extends BaseEntity {
 
   @Column({ type: 'varchar' })
   public email!: string;
+
+  @Column({ type: 'varchar', name: 'auth_id' })
+  public authId!: string;
 }

@@ -1,35 +1,33 @@
-## Technical
-- Nestjs
-- Protobuf
-- Mono-repo 
-- Model generation
-## Code generation
-```
-npm run proto:all
-```
+## Node Kit
 
-## How to use
+A NodeJs boilerplate (using NestJS) with Microservice Architecture, it's simple, easy to learn code-base, easy to deployment (using mono-repo with Turbo)
 
-```
-#!/bin/bash
+## Project Status
+This project is currently in development.
 
-docker stop api
-docker stop user-svc
-docker stop doctor-svc
+## Checklists
+- gRPC
+- Mono-repo (with Turbo)
 
-docker rm api
-docker rm user-svc
-docker rm doctor-svc
+## Installation and Setup Instructions
 
-docker rmi api:v1
-docker rmi user-svc:v1
-docker rmi doctor-svc:v1
+Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
 
-docker build -t api:v1 -f api/Dockerfile .
-docker build -t user-svc:v1 -f services/user-svc/Dockerfile .
-docker build -t doctor-svc:v1 -f services/doctor-svc/Dockerfile .
+Please check and create config.yml each service 
 
-docker run -itd --net=host -p 8080:3000 --name=api api:v1
-docker run -itd --net=host --name=user-svc user-svc:v1
-docker run -itd --net=host --name=doctor-svc doctor-svc:v1
-```
+```cp config.template.yaml config.yaml```
+
+Installation:
+
+```yarn```
+
+To run protobuf gen code:  
+
+```yarn proto:gen-user```  
+```yarn proto:gen-auth```  
+
+To Start Server:
+
+```yarn dev```  
+image.png
+## Reflection

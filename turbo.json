@@ -27,6 +27,9 @@
       },
       "proto:gen-user": {
         "cache": true
+      },
+      "proto:gen-auth": {
+        "cache": true
       }
     }
   }

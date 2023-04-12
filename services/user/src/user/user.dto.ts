@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
 import { CreateUserRequest } from './user.pb';
 
 export class CreateUserRequestDto implements CreateUserRequest {
@@ -9,4 +9,7 @@ export class CreateUserRequestDto implements CreateUserRequest {
   @IsString()
   @IsNotEmpty()
   email: string;
+
+  @IsNumber()
+  authId: string;
 }
