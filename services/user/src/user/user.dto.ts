@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsNumber, IsString } from 'class-validator';
-import { CreateUserRequest } from './user.pb';
+import { CreateUserRequest, UserById } from './user.pb';
 
 export class CreateUserRequestDto implements CreateUserRequest {
   @IsString()
@@ -12,4 +12,9 @@ export class CreateUserRequestDto implements CreateUserRequest {
 
   @IsNumber()
   authId: string;
+}
+
+export class FindOneRequestDto implements UserById {
+  @IsNumber({ allowInfinity: false, allowNaN: false })
+  public readonly id: number;
 }
