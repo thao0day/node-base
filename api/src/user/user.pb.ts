@@ -25,20 +25,37 @@ export interface CreateUserResponse {
   id: number;
 }
 
+export interface FindOneUserResponse {
+  status: number;
+  error: string[];
+  data: User | undefined;
+}
+
+export interface FindManyUserRequest {
+  name: string;
+  email: string;
+}
+
+export interface FindManyUserResponse {
+  status: number;
+  error: string[];
+  data: User[];
+}
+
 export const USER_PACKAGE_NAME = "user";
 
 export interface UserServiceClient {
-  findOne(request: UserById): Observable<User>;
+  findOne(request: UserById): Observable<FindOneUserResponse>;
 
-  findMany(request: Observable<UserById>): Observable<User>;
+  findMany(request: Observable<UserById>): Observable<FindManyUserResponse>;
 
   createUser(request: CreateUserRequest): Observable<CreateUserResponse>;
 }
 
 export interface UserServiceController {
-  findOne(request: UserById): Promise<User> | Observable<User> | User;
+  findOne(request: UserById): Promise<FindOneUserResponse> | Observable<FindOneUserResponse> | FindOneUserResponse;
 
-  findMany(request: Observable<UserById>): Observable<User>;
+  findMany(request: Observable<UserById>): Observable<FindManyUserResponse>;
 
   createUser(
     request: CreateUserRequest,

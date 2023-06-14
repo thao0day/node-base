@@ -1,7 +1,12 @@
 import { Controller, Inject } from '@nestjs/common';
 import { UserService } from './user.service';
 import { GrpcMethod } from '@nestjs/microservices';
-import { CreateUserResponse, USER_SERVICE_NAME, User } from './user.pb';
+import {
+  CreateUserResponse,
+  FindOneUserResponse,
+  USER_SERVICE_NAME,
+  User,
+} from './user.pb';
 import { CreateUserRequestDto, FindOneRequestDto } from './user.dto';
 
 @Controller()
@@ -17,12 +22,12 @@ export class UserController {
   }
 
   @GrpcMethod(USER_SERVICE_NAME, 'FindOne')
-  private findOne(payload: FindOneRequestDto): Promise<User> {
-    return this.service.getUser(payload);
+  private findOne(payload: FindOneRequestDto): Promise<FindOneUserResponse> {
+    return this.service.findOne(payload);
   }
 
-  @GrpcMethod(USER_SERVICE_NAME, 'FindMany')
-  private findMany(payload: Observable<FindOneRequestDto>): Observable<User> {
-    return this.service.findMany(payload);
-  }
+  // @GrpcMethod(USER_SERVICE_NAME, 'FindMany')
+  // private findMany(payload: Observable<FindOneRequestDto>): Observable<User> {
+  //   return this.service.findMany(payload);
+  // }
 }
