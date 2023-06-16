@@ -23,7 +23,6 @@ COPY --from=builder /usr/src/app/services/user/package.json ./services/user/pack
 # COPY --from=builder /usr/src/app/services/auth/dist ./services/auth/dist
 # COPY --from=builder /usr/src/app/services/auth/package.json ./services/auth/package.json
 
-COPY --from=builder /usr/src/app/proto ./api/proto
-COPY --from=builder /usr/src/app/proto ./services/proto
+COPY --from=builder /usr/src/app/proto ./proto
 
 CMD ["yarn", "start:prod"]

@@ -16,7 +16,7 @@ async function bootstrap() {
       options: {
         url: `${config.grpc.host}:${config.grpc.port}`,
         package: protobufPackage,
-        protoPath: join(__dirname, '../../../proto/user.proto'),
+        protoPath: join(process.cwd(), '../../proto/user.proto'),
       },
     },
   );
