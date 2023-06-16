@@ -15,10 +15,7 @@ const config = configuration();
         options: {
           url: config.services.user.host + ':' + config.services.user.port,
           package: USER_PACKAGE_NAME,
-          protoPath: join(
-            __dirname,
-            '../../../../node_modules/core-proto/user.proto',
-          ),
+          protoPath: join(__dirname, '../../../proto/user.proto'),
         },
       },
     ]),

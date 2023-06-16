@@ -22,9 +22,9 @@
     "proto:gen-user": "protoc --plugin=../../node_modules/.bin/protoc-gen-ts_proto -I=../../node_modules/core-proto --ts_proto_out=src/user ../../node_modules/core-proto/user.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb"
   },
   "dependencies": {
+    "core-proto": "*"
   },
   "devDependencies": {
-    "core-proto": "*"
   },
   "jest": {
     "moduleFileExtensions": [

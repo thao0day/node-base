@@ -1,21 +1,29 @@
-FROM node:18-alpine As build
-
+FROM node:lts as builder
 WORKDIR /usr/src/app
-
-COPY --chown=node:node package*.json ./
-RUN npm ci
-COPY --chown=node:node . .
-
-RUN npm run build
+COPY package.json yarn.lock ./
+RUN yarn global add turbo
+RUN yarn install --frozen-lockfile
+COPY . .
+RUN yarn build --no-cache
+# Production
+FROM node:lts-slim
 ENV NODE_ENV production
-RUN npm ci --omit=dev && npm cache clean --force
 USER node
+WORKDIR /usr/src/app
+COPY package.json yarn.lock turbo.json ./
+RUN yarn global add turbo
+RUN yarn install --production --frozen-lockfile
 
-# PRODUCTION
-FROM node:18-alpine As production
+COPY --from=builder /usr/src/app/api/dist ./api/dist
+COPY --from=builder /usr/src/app/api/package.json ./api/package.json
 
-COPY --chown=node:node --from=build /usr/src/app/node_modules ./node_modules
-COPY --chown=node:node --from=build /usr/src/app/dist ./dist
+COPY --from=builder /usr/src/app/services/user/dist ./services/user/dist
+COPY --from=builder /usr/src/app/services/user/package.json ./services/user/package.json
 
-# Start the server using the production build
-CMD [ "node", "dist/main.js" ]
+# COPY --from=builder /usr/src/app/services/auth/dist ./services/auth/dist
+# COPY --from=builder /usr/src/app/services/auth/package.json ./services/auth/package.json
+
+COPY --from=builder /usr/src/app/proto ./api/proto
+COPY --from=builder /usr/src/app/proto ./services/proto
+
+CMD ["yarn", "start:prod"]

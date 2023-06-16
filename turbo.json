@@ -22,7 +22,7 @@
         "cache": false
       },
       "start:prod": {
-        "cache": true,
+        "cache": false,
         "persistent": true
       },
       "proto:gen-user": {

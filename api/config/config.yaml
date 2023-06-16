@@ -1,6 +1,6 @@
 http:
   host: 'localhost'
-  port: 8080
+  port: 80
 services:
   user:
     host: 0.0.0.0

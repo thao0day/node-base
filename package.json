@@ -69,7 +69,6 @@
   "workspaces": [
     "api",
     "proto",
-    "services/*",
-    "web/*"
+    "services/user"
   ]
 }
