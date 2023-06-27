@@ -9,9 +9,6 @@ export class CreateUserRequestDto implements CreateUserRequest {
   @IsString()
   @IsNotEmpty()
   email: string;
-
-  @IsNumber()
-  authId: string;
 }
 
 export class FindOneRequestDto implements UserById {
