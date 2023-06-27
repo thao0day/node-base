@@ -5,7 +5,6 @@ import { ConfigModule } from '@nestjs/config';
 ConfigModule.forRoot({
   isGlobal: true,
 });
-
 const YAML_CONFIG = process.env.CONFIG_PATH
   ? join(process.cwd(), '../', process.env.CONFIG_PATH || '', 'api.yaml')
   : join(__dirname, 'api.yaml');

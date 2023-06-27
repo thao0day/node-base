@@ -7,7 +7,7 @@ ConfigModule.forRoot({
 });
 
 const YAML_CONFIG = process.env.CONFIG_PATH
-  ? join(process.cwd(), '../', process.env.CONFIG_PATH || '', 'api.yaml')
+  ? join(process.cwd(), '../', process.env.CONFIG_PATH || '', 'user.yaml')
   : join(__dirname, 'user.yaml');
 
 export default () => {
