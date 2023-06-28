@@ -1,4 +1,4 @@
-import { Body, Controller, Inject, OnModuleInit, Post } from '@nestjs/common';
+import { Body, Controller, Get, Inject, OnModuleInit, Post } from '@nestjs/common';
 import {
   CreateUserRequest,
   CreateUserResponse,
@@ -9,6 +9,9 @@ import { ClientGrpc } from '@nestjs/microservices';
 import { Observable } from 'rxjs';
 
 @Controller('users')
+@Controller({
+  version: '1',
+})
 export class UserController implements OnModuleInit {
   private svc: UserServiceClient;
 
