@@ -28,5 +28,5 @@ jobs:
           cd ~/home/nodebase
           git pull origin master
           git status
-          docker build -t nodebase .
+          docker build --network=host --progress=plain -t nodebase .
           docker run -it -d -p 8080:80 nodebase
