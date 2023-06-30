@@ -1,8 +1,4 @@
 ## NodeBase
-
-A NodeJs boilerplate (using NestJS) with Microservice Architecture, it's simple, easy to learn code-base, easy to deployment (using mono-repo with Turbo)
-
-## Project Status
 This project is currently in development.
 
 ## Checklists
